@@ -1,0 +1,9 @@
+{
+  "field_firstName": "#FirstName",
+  "field_lastName": "#LastName",
+  "field_email": "#Email",
+  "field_password": "#Password",
+  "field_confirm_password": "#ConfirmPassword",
+  "button_register": "#register-button",
+  "error_message_mismatch_password": ".header-links > ul > :nth-child(1) > .account"
+}
