@@ -1,5 +1,9 @@
 {
   "watchForFileChanges": false,
+  "env": {
+    "apiURL": "https://reqres.in/api"
+  },
+  
   "ignoreTestFiles": [
     "**/*/1-getting-started/*.js",
     "**/*/2-advanced-examples/*.js"
