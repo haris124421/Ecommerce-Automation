@@ -29,7 +29,8 @@ class pdp {
     }
 
     static verifyQtyAddedToCart() {
-        cy.get(pageObjectsPDP.field_atc_value).invoke('val').should('have.text', '5')
+        // cy.get(pageObjectsPDP.field_atc_value).invoke('val').should('have.text', '5');
+        cy.xpath(pageObjectsPDP.field_atc_value_5);
     }
 }
 

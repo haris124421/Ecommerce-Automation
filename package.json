@@ -1,6 +1,8 @@
 {
   "dependencies": {
-    "cypress": "^9.7.0"
+    "cypress": "^9.7.0",
+    "cypress-xpath": "^2.0.1",
+    "xpath": "^0.0.32"
   },
   "scripts": {
     "test:all": "npx cypress run --headed chrome",

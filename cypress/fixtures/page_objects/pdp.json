@@ -5,5 +5,5 @@
   "product_tile": "",
   "field_quantity": ".qty-input",
   "button_add_to_cart": ".button-1.add-to-cart-button",
-  "field_atc_value": ".cart-qty"
+  "field_atc_value_5": "//*[@class='cart-qty' and contains(text(),'5')]"
 }
