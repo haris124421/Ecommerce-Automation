@@ -1,14 +1,15 @@
 /// <refernce types="cypress" />
 describe('Test Suite for API Automation', function () {
 
-    it('TC-01 Login API', function () {
+    it('TC-01 LOGIN API', function () {
         //POST API CALL
         cy.login(); //cy.login is cypress custom command its implemententation can been seen in Support/Command.js file
         cy.visit('https://demowebshop.tricentis.com/') //access the tricentis site and check user should be automatically logged in
         cy.get('.header-links > ul > :nth-child(1) > .account')
-        .should('have.text', 'test@nomail.com') //assertion to check logged-in state
+            .should('have.text', 'test@nomail.com') //assertion to check logged-in state
     })
 
+    //////////////////// For below Apis we used sample apis from https://reqres.in/ ////////////////////
     it('TC-02 GET API call', function () {
         // GET API CALL
         cy.request({
@@ -34,8 +35,8 @@ describe('Test Suite for API Automation', function () {
         })
     })
 
-    it('TC-03 Update a user API', function () {
-
+    it('TC-03 PUT API CALL', function () {
+        // PUT API CALL
         cy.request({
             method: 'PUT',
             url: 'https://reqres.in/api/user/2',
@@ -55,5 +56,16 @@ describe('Test Suite for API Automation', function () {
 
     })
 
+    it('TC-04 DELETE API CALL', function () {
+        //DELETE API CALL
+        cy.request({
+            method: 'DELETE',
+            url: 'https://reqres.in/api/users/2',
+            failOnStatusCode: false
+
+        }).then(function (response) {
+            expect(response.status).to.eq(204)
+        })
+    })
 
 })
