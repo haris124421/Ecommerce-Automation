@@ -5,7 +5,8 @@ describe('Test Suite for API Automation', function () {
         //POST API CALL
         cy.login(); //cy.login is cypress custom command its implemententation can been seen in Support/Command.js file
         cy.visit('https://demowebshop.tricentis.com/') //access the tricentis site and check user should be automatically logged in
-        cy.get('.header-links > ul > :nth-child(1) > .account').should('have.text', 'test@nomail.com') //assertion to check logged-in state
+        cy.get('.header-links > ul > :nth-child(1) > .account')
+        .should('have.text', 'test@nomail.com') //assertion to check logged-in state
     })
 
     it('TC-02 GET API call', function () {
