@@ -1,0 +1,9 @@
+{
+  "category_books": ".list [href='/books']",
+  "category_computers": ".list [href='/computers']",
+  "category_electronics": ".list [href='/electronics']",
+  "product_tile": "",
+  "field_quantity": ".qty-input",
+  "button_add_to_cart": ".button-1.add-to-cart-button",
+  "field_atc_value": ".cart-qty"
+}

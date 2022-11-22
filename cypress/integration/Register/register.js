@@ -2,11 +2,16 @@ import poRegister from "../../fixtures/page_objects/register.json";
 import testDataRegister from "../../fixtures/test_data/register.json";
 import poDashboard from "../../fixtures/page_objects/dashboard.json";
 let GLOBAL_EMAIL = "email" +Math.floor(Math.random() * 1000) + "@gmail.com";
-                // = email715@gmail.com
 
 describe('Test suite for registration module', ()=> {
     beforeEach(()=> {
         cy.visit("https://demowebshop.tricentis.com/");
+    })
+
+    afterEach(()=> {
+        if (Cypress.$('.header-links > ul > :nth-child(1) > .account').length > 1) {
+            cy.get(poDashboard.button_logout).click();
+        }
     })
 
     it('tc01 Verify user is able to access application', () => {
@@ -73,7 +78,7 @@ describe('Test suite for registration module', ()=> {
         cy.get('.header-links > ul > :nth-child(1) > .account').should('not.exist');
     })
 
-    it.only('WITH FIXTURES - verify user is able to perform sign in with new account and when user logout then user email should not be displayed', ()=>{
+    it('WITH FIXTURES - verify user is able to perform sign in with new account and when user logout then user email should not be displayed', ()=>{
         cy.get(poDashboard.button_register).click();
         cy.get(poRegister.field_firstName).type("First");
         cy.get(poRegister.field_lastName).type("last");
@@ -84,5 +89,18 @@ describe('Test suite for registration module', ()=> {
         cy.get(poRegister.error_message_mismatch_password).should('be.visible');
         cy.get(poDashboard.button_logout).click();
         cy.get(poRegister.error_message_mismatch_password).should('not.exist');
+    })
+
+    it.only('perform login and leave the state as it is..', ()=>{
+        cy.get(poDashboard.button_register).click();
+        cy.get(poRegister.field_firstName).type("First");
+        cy.get(poRegister.field_lastName).type("last");
+        cy.get(poRegister.field_email).type(GLOBAL_EMAIL);
+        cy.get(poRegister.field_password).type(testDataRegister.valid_password);
+        cy.get(poRegister.field_confirm_password).type(testDataRegister.valid_password);
+        cy.get(poRegister.button_register).click();
+        cy.get(poRegister.error_message_mismatch_password).should('be.visible');
+        // cy.get(poDashboard.button_logout).click();
+        // cy.get(poRegister.error_message_mismatch_password).should('not.exist');
     })
 })

@@ -3,9 +3,12 @@
     "cypress": "^9.7.0"
   },
   "scripts": {
-    "test:all" : "npx cypress run --headed chrome",
+    "test:all": "npx cypress run --headed chrome",
     "test:Register": "cypress run --spec cypress/integration/Register/**.js --headed chrome",
     "test:Dashboard": "cypress run --spec cypress/integration/Dashboard/**.js --headed chrome",
     "test:Login": "cypress run --spec cypress/integration/Login/**.js --headed chrome"
+  },
+  "devDependencies": {
+    "cypress-wait-until": "^1.7.2"
   }
 }

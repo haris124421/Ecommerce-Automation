@@ -5,7 +5,7 @@ describe('Login Functionality', () => {
 
     it('tc01 Verify user is able to access application', () => {
         //Verify user is able to access application
-        // cy.visit('https://demowebshop.tricentis.com/')
+        cy.visit('https://demowebshop.tricentis.com/')
         //asserts
         cy.url().should('eq','https://demowebshop.tricentis.com/')
     })
