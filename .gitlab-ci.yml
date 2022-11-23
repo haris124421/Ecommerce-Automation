@@ -1,9 +1,17 @@
 stages:
+- deploy-qa
 - test
+- deploy-stg
+
+deploy-qa:
+#  -
 
 test:
   image: cypress/browsers:node16.5.0-chrome94-ff93
   stage: test
   script:
     - npm ci
-    - npm run runAllTestCases
+    - npm run runAllRegisterTCs
+
+deploy-stg:
+#  -
