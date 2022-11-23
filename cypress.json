@@ -1,4 +1,5 @@
 {
+  "baseUrl": "https://demowebshop.tricentis.com/",
   "watchForFileChanges": false,
   "ignoreTestFiles": [
     "**/*/1-getting-started/*.js",

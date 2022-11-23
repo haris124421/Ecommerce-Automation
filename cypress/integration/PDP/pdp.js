@@ -18,7 +18,7 @@ describe('Test suite for pdp module', ()=> {
     })
 
     it('Verify user is able to add product to cart from pdp screen without logged in user', ()=>{
-        pdp.openCategory("Beeks");
+        pdp.openCategory("Books");
         pdp.selectFirstProductFromPLP();
         pdp.enterQuantity(5);
         pdp.clickAddToCart();

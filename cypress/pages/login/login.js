@@ -2,7 +2,6 @@ import pageObjectsLogin from "../../fixtures/page_objects/login.json"
 import testDataLogin from "../../fixtures/test_data/login.json"
 import pageObjectDashboard from "../../fixtures/page_objects/dashboard.json"
 
-
 class login {
     static performLogin() {
         this.enterEmail();
@@ -24,6 +23,23 @@ class login {
 
     static clickOnLoginLinkToOpenForm() {
         cy.get(pageObjectDashboard.button_login).click();
+    }
+
+    static iClickOnLoginButton() {
+        cy.get(pageObjectsLogin.button_login).click();
+    }
+
+    static iEnterValidCredentials() {
+        this.enterEmail();
+        this.enterPassword();
+    }
+
+    static iClickOnLoginButton() {
+        this.clickLoginButton();
+    }
+
+    static iShouldAbleToLoginIntoApplication() {
+        // write implementation here
     }
 }
 
