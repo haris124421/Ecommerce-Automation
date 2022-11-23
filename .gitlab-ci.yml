@@ -4,7 +4,8 @@ stages:
 - deploy-stg
 
 deploy-qa:
-#  -
+  script:
+    - echo "this is QA deployment"
 
 test:
   image: cypress/browsers:node16.5.0-chrome94-ff93
@@ -14,4 +15,5 @@ test:
     - npm run runAllRegisterTCs
 
 deploy-stg:
-#  -
+  script:
+    - echo "this is STG deployment"
