@@ -8,7 +8,8 @@
     "test:all": "npx cypress run --headed chrome",
     "test:Register": "cypress run --spec cypress/integration/Register/**.js --headed chrome",
     "test:Dashboard": "cypress run --spec cypress/integration/Dashboard/**.js --headed chrome",
-    "test:Login": "cypress run --spec cypress/integration/Login/**.js --headed chrome"
+    "test:Login": "cypress run --spec cypress/integration/Login/**.js --headed chrome",
+    "runAllTestCases": "cypress run --browser chrome"
   },
   "devDependencies": {
     "cypress-cucumber-preprocessor": "^4.3.1",
