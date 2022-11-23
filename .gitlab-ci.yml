@@ -4,6 +4,8 @@ stages:
 - deploy-stg
 
 deploy-qa:
+  stage:
+    - deploy-qa
   script:
     - echo "this is QA deployment"
 
@@ -15,5 +17,7 @@ test:
     - npm run runAllRegisterTCs
 
 deploy-stg:
+  stage:
+    - deploy-stg
   script:
     - echo "this is STG deployment"
