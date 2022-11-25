@@ -17,7 +17,36 @@
  */
 // eslint-disable-next-line no-unused-vars
 const cucumber = require('cypress-cucumber-preprocessor').default
+const sqlite3 = require('sqlite3').verbose();
+
+const path='C:\\Users\\am16608\\WebstormProjects\\cypress\\ecomm\\cypress-automation-frm988\\cypress\\datasource\\ecommerce-demo\\identifier.sqlite'
 
 module.exports = (on, config) => {
     on('file:preprocessor', cucumber())
+    on("task", {
+        queryTestDB: (query) => {
+            return queryTestDB(query, config);
+        }
+    })
+    // on("task", {
+    //     queryProdDb: (query) => {
+    //         return queryProdDb(query, config);
+    //     }
+    // })
+}
+
+function queryTestDB(sql) {
+    let db = new sqlite3.Database(path);
+    return new Promise((resolve, reject) => {
+        db.all(sql, [], (err, rows) => {
+            if(err)
+                reject(err);
+
+            else  {
+                db.close();
+                console.log(rows)
+                return resolve(rows);
+            }//End else
+        });//End db.run
+    });
 }

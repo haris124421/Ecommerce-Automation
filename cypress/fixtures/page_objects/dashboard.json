@@ -1,5 +1,6 @@
 {
   "button_register": ".ico-register",
   "button_login": ".ico-login",
-  "button_logout": ".ico-logout"
+  "button_logout": ".ico-logout",
+  "field_search": "#small-searchterms"
 }
